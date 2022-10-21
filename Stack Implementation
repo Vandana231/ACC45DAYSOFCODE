@@ -1,0 +1,64 @@
+#include<iostream>
+#define size30
+using namespace std;
+
+class Stack
+{
+int arr[size],top;
+public:
+Stack()
+{
+top==-1;
+}
+void push()
+{
+int val;
+if(top==size-1)
+{
+cout<<"Stack Overflow";
+}
+else
+{
+top=top+1;
+cout<<"Enter value to be inserted:";
+cin>>val;
+arr[top]=val;
+}
+}
+
+int pop()
+{
+if(top==-1)
+{
+cout<<"Stack Underflow";
+}
+else
+{
+return(arr[--top]);
+}
+}
+
+void display()
+{
+if(top==-1)
+{
+cout<<"Stack Underflow";
+}
+else
+{
+for(int i=top;i>=0;i--)
+cout<<arr[i]<<"\t";
+}
+}
+};
+
+int main()
+{
+Stack st;
+st.push();
+st.display();
+cout<<"pop func"<<"\n";
+st.pop();
+st.display();
+return 0;
+}
